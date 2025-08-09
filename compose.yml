@@ -1,0 +1,14 @@
+services:
+  lhci-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lhci-server
+    ports:
+      - "9001:9001"
+    volumes:
+      - lhci-data:/data
+    restart: unless-stopped
+
+volumes:
+  lhci-data:
